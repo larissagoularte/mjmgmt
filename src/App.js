@@ -8,15 +8,7 @@ import Register from "./components/Register";
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Header /> 
-        <Routes>
-          <Route path="/registar" element={<Register />} />
-
-
-        </Routes>
-
-      </Router>
+      
     </div>
   );
 }
