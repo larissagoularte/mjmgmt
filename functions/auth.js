@@ -1,7 +1,7 @@
 import { sha256, getCookieKeyValue } from './utils';
 import { CFP_COOKIE_MAX_AGE, CFP_COOKIE_KEY } from './constants';
 
-export async function onRequest(context) {
+async function handleAuthRequest(context) {
   const { request, env } = context;
   const url = new URL(request.url);
   const { pathname, searchParams } = url;
@@ -22,7 +22,7 @@ export async function onRequest(context) {
   }
 }
 
-export async function onRequestPost(context) {
+async function handleAuthPostRequest(context) {
   const { request, env } = context;
   const formData = await request.formData();
   const password = formData.get('password');
@@ -102,3 +102,5 @@ function getTemplate({ redirectPath, withError }) {
     </html>
   `;
 }
+
+export { handleAuthRequest, handleAuthPostRequest };

@@ -1,5 +1,5 @@
-import { onRequestPost } from './auth';
+import { handleAuthPostRequest } from './auth';
 
 export async function onRequest(context) {
-  return await onRequestPost(context);
+  return await handleAuthPostRequest(context);
 }

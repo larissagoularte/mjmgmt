@@ -1,7 +1,7 @@
-import { onRequest } from './auth';
+import { handleAuthRequest } from './auth';
 
 export async function onRequest(context) {
-  const response = await onRequest(context);
+  const response = await handleAuthRequest(context);
   if (response) {
     return response;
   }
